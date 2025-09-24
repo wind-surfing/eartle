@@ -45,7 +45,7 @@ export default function Navbar({
           </h1>
         </Link>
 
-        <div className="hidden md:flex items-center gap-2">
+        <div className="flex items-center gap-1 md:gap-2">
           {navigationLinks.map((link) => {
             const Icon = link.icon;
             return (
@@ -53,25 +53,25 @@ export default function Navbar({
                 <Button
                   variant={isActive(link.href) ? "ghost" : "ghost"}
                   size="sm"
-                  className={`flex items-center gap-2 transition-all duration-200 cursor-pointer ${
+                  className={`flex items-center gap-1 md:gap-2 transition-all duration-200 cursor-pointer text-xs md:text-sm ${
                     isActive(link.href)
                       ? "text-foreground bg-background hover:text-primary"
                       : "text-background hover:text-foreground"
                   }`}
                 >
                   <Icon className="w-4 h-4" />
-                  {link.label}
+                  <span className="hidden md:inline">{link.label}</span>
                 </Button>
               </Link>
             );
           })}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           {showTimer && formatTime && (
-            <div className="flex items-center gap-2 text-lg text-background">
-              <Timer className="w-5 h-5" />
-              <span className="drop-shadow-md font-mono">
+            <div className="flex items-center gap-1 md:gap-2 text-sm md:text-lg text-background">
+              <Timer className="w-4 h-4 md:w-5 md:h-5" />
+              <span className="drop-shadow-md font-mono text-xs md:text-base">
                 {formatTime(endTime ? endTime - (startTime || 0) : currentTime)}
               </span>
             </div>
@@ -82,35 +82,14 @@ export default function Navbar({
               onClick={onNewGame}
               variant="outline"
               size="sm"
-              className="flex items-center gap-2 transition-all duration-200 cursor-pointer"
+              className="flex items-center gap-1 md:gap-2 transition-all duration-200 cursor-pointer text-xs md:text-sm"
             >
-              <RotateCcw className="w-4 h-4" />
-              New Game
+              <RotateCcw className="w-3 h-3 md:w-4 md:h-4" />
+              <span className="hidden sm:inline">New Game</span>
+              <span className="sm:hidden">New</span>
             </Button>
           )}
         </div>
-      </div>
-
-      <div className="md:hidden mt-4 flex justify-center gap-1">
-        {navigationLinks.map((link) => {
-          const Icon = link.icon;
-          return (
-            <Link key={link.href} href={link.href}>
-              <Button
-                variant={isActive(link.href) ? "default" : "ghost"}
-                size="sm"
-                className={`flex items-center gap-1 transition-all duration-200 cursor-pointer ${
-                  isActive(link.href)
-                    ? "bg-primary text-white"
-                    : "text-background hover:text-primary"
-                }`}
-              >
-                <Icon className="w-4 h-4" />
-                <span className="text-xs">{link.label}</span>
-              </Button>
-            </Link>
-          );
-        })}
       </div>
     </nav>
   );

@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+.social-text {
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  color: var(--muted-foreground);
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  height: 46px;
+  width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.45rem;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.svg {
+  height: 75%;
+  width: 75%;
+}
