@@ -43,6 +43,7 @@ export function GameComponent({
   const [startTime, setStartTime] = useState<number | null>(null);
   const [endTime, setEndTime] = useState<number | null>(null);
   const [totalGuesses, setTotalGuesses] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [showResultDialog, setShowResultDialog] = useState(false);
   const [resetTrigger, setResetTrigger] = useState(0);

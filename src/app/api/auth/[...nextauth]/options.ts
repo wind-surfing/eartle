@@ -79,11 +79,16 @@ export const authOptions: NextAuthOptions = {
             user.email = result.user.email;
             user.name = result.user.displayName || result.user.username;
             user.image = result.user.avatar;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (user as any).username = result.user.username;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (user as any).displayName =
               result.user.displayName || result.user.username;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (user as any).avatar = result.user.avatar;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (user as any).emailVerified = Boolean(result.user.emailVerified);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (user as any).lastActiveAt = result.user.lastActiveAt || new Date();
 
             console.log("User object after social sign-in:", user);
@@ -103,10 +108,15 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         token.id = user.id || "";
         token.email = user.email || "";
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         token.username = (user as any).username || "";
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         token.displayName = (user as any).displayName || user.name || "";
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         token.avatar = (user as any).avatar || user.image || null;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         token.emailVerified = Boolean((user as any).emailVerified) || false;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         token.lastActiveAt = (user as any).lastActiveAt || new Date();
       }
       return token;

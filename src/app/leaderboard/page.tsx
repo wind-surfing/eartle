@@ -15,7 +15,9 @@ export default function Page() {
   const [items, setItems] = useState<SocialUserData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [startTime, setStartTime] = useState<number | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [endTime, setEndTime] = useState<number | null>(null);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const router = useRouter();

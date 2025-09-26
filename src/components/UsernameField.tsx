@@ -38,7 +38,7 @@ export default function UsernameField({
     if (value === undefined) {
       setUsername(defaultValue ?? "");
     }
-  }, [defaultValue]);
+  }, [defaultValue, value]);
 
   const current = value ?? username ?? "";
   const isOwnedSame =

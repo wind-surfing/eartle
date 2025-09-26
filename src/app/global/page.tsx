@@ -68,7 +68,7 @@ function Page() {
     } finally {
       setIsLoading(false);
     }
-  }, [isLoading, targetWord, user]);
+  }, [isLoading, targetWord]);
 
   useEffect(() => {
     if (!initialized) {
