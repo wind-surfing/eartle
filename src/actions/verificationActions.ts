@@ -106,7 +106,8 @@ export async function resendVerificationCodeAction(
       };
     }
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const baseUrl =
+      process.env.NEXT_PUBLIC_BASE_URL || "https://eartle.vercel.app";
 
     const emailResponse = await sendEmails({
       templateName: "verify-email",
@@ -277,7 +278,8 @@ export async function sendVerificationEmailAction(
         ? "reset-password-email"
         : "verify-email";
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const baseUrl =
+      process.env.NEXT_PUBLIC_BASE_URL || "https://eartle.vercel.app";
 
     let dataField;
     if (validatedData.type === "password-reset") {
