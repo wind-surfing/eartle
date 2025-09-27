@@ -14,7 +14,7 @@ export default async function AuthContent({
   const isSignUpMode = mode === "signup";
 
   return (
-    <div className="min-h-screen bg-foreground flex items-center justify-center p-4">
+    <div className="min-h-[120vh] bg-foreground flex items-center justify-center p-4">
       <Navbar></Navbar>
       <div className="w-full max-w-md">
         <AuthenticationForms initialMode={isSignUpMode ? "signup" : "signin"} />
