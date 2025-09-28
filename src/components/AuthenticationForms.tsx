@@ -153,7 +153,7 @@ export default function AuthenticationForms({
 
       if (response?.ok) {
         toast.success("Welcome back!", { id: "signin" });
-        router.push("/home");
+        window.location.href = "/home";
       } else if (response?.error) {
         const { message } = resolveSignInError(response.error, searchParams);
         toast.error(message, { id: "signin" });
